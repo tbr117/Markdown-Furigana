@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:api.github.com)",
+      "WebFetch(domain:patch-diff.githubusercontent.com)",
+      "Bash(npm install)",
+      "Bash(npm run build)",
+      "Bash(npm run copy-dict)",
+      "Bash(defaults read com.obsidian.Obsidian)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); [print\\(v.get\\(''path'',''''\\)\\) for v in d.get\\(''vaults'',{}\\).values\\(\\)]\")",
+      "Bash(mdfind -name \"furigana-pro\")",
+      "Bash(python3 -m json.tool)",
+      "Bash(PLUGIN=\"/Users/tbrams/Library/Mobile Documents/iCloud~md~obsidian/Documents/Japanese/.obsidian/plugins/Markdown-Furigana\")",
+      "Bash(for f in main.js manifest.json styles.css dict)",
+      "Bash(do)",
+      "Bash(if [ -e \"$PLUGIN/$f\" ])",
+      "Bash(then echo \"✓ $f\")",
+      "Bash(else echo \"✗ MISSING: $f\")",
+      "Bash(fi)",
+      "Bash(done)"
+    ]
+  }
+}

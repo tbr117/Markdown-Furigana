@@ -1,0 +1,120 @@
+/* ============================================================
+   Furigana Pro — styles.css
+
+   Layout strategy:
+     ruby.furi             → inline-flex row, chars side by side
+     ruby.furi .furi-char  → flex column, rt on top / kanji on bottom
+     ruby.furi .furi-char rt → plain block inside the column
+
+   This does NOT rely on display:ruby-text (broken in Obsidian/Electron).
+   It renders correctly in all Obsidian themes.
+   ============================================================ */
+
+/* ── Outer ruby container: horizontal row of character groups ─── */
+ruby.furi {
+  display: inline-flex !important;
+  flex-direction: row;
+  align-items: flex-end;    /* baseline-align all character groups     */
+  vertical-align: bottom;   /* sit on the text baseline in the parent  */
+  line-height: normal;
+  color: var(--furigana-base-color, inherit);
+  font-family: var(--furigana-base-font, inherit);
+  text-decoration: none;
+}
+
+/* ── Each (reading / base-char) pair stacked in a column ───────── */
+ruby.furi .furi-char {
+  display: inline-flex;
+  flex-direction: column;   /* rt first → top; text second → bottom   */
+  align-items: center;
+  text-align: center;
+}
+
+/* ── Reading text (rt) at the top of each column ───────────────── */
+ruby.furi .furi-char rt {
+  display: block;           /* block inside flex column – always works */
+  font-size: var(--furigana-font-size, 0.6em);
+  color: var(--furigana-color, inherit);
+  font-family: var(--furigana-font, inherit);
+  opacity: var(--furigana-opacity, 1);
+  transition: opacity 0.15s ease;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* ── Visibility toggle ──────────────────────────────────────────── */
+body.furigana-hidden ruby.furi .furi-char rt {
+  opacity: 0 !important;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* ── Settings panel live preview ────────────────────────────────── */
+.furigana-settings-preview {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  background: var(--background-secondary);
+  border-radius: var(--radius-m, 6px);
+  border: 1px solid var(--background-modifier-border);
+}
+
+.furigana-settings-preview-label {
+  font-size: 0.85em;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.furigana-settings-preview ruby.furi {
+  font-size: 1.6em;
+  cursor: default;
+}
+
+/* ── How to Use section ─────────────────────────────────────────── */
+.furigana-howto {
+  font-size: 0.9em;
+  color: var(--text-normal);
+  line-height: 1.6;
+}
+
+.furigana-howto table {
+  border-collapse: collapse;
+  margin: 8px 0 12px 0;
+  width: 100%;
+}
+
+.furigana-howto td,
+.furigana-howto th {
+  border: 1px solid var(--background-modifier-border);
+  padding: 4px 10px;
+  text-align: left;
+}
+
+.furigana-howto th {
+  background: var(--background-secondary);
+  font-weight: 600;
+}
+
+.furigana-howto code {
+  font-size: 0.9em;
+  background: var(--background-secondary);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
+.furigana-howto kbd {
+  font-size: 0.85em;
+  background: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 3px;
+  padding: 1px 6px;
+}
+
+.furigana-howto ol,
+.furigana-howto ul {
+  padding-left: 1.4em;
+  margin: 6px 0;
+}

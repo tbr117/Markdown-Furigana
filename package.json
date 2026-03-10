@@ -1,0 +1,30 @@
+{
+  "name": "furigana-pro",
+  "version": "1.0.0",
+  "description": "Rich furigana rendering with auto kanji→hiragana, custom styling, and visibility toggle",
+  "main": "main.js",
+  "scripts": {
+    "dev": "rollup --config rollup.config.mjs -w",
+    "build": "rollup --config rollup.config.mjs --environment BUILD:production",
+    "copy-dict": "node scripts/copy-dict.js",
+    "deploy": "rollup --config rollup.config.mjs --environment BUILD:production && cp main.js styles.css manifest.json \"/Users/tbrams/Library/Mobile Documents/iCloud~md~obsidian/Documents/Japanese/.obsidian/plugins/Markdown-Furigana/\""
+  },
+  "keywords": ["obsidian", "japanese", "furigana", "ruby", "kanji"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/node": "^16.18.96",
+    "builtin-modules": "^3.3.0",
+    "obsidian": "latest",
+    "rollup": "^4.13.0",
+    "tslib": "^2.6.2",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "kuromoji": "^0.1.2",
+    "wanakana": "^5.3.1"
+  }
+}

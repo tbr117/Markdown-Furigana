@@ -1,0 +1,4 @@
+node_modules/
+dict/
+main.js
+*.js.map
