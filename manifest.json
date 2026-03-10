@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "minAppVersion": "1.4.0",
   "description": "Rich furigana rendering with auto kanji→hiragana, custom styling, and visibility toggle.",
-  "author": "",
+  "author": "TBR117",
   "authorUrl": "",
   "isDesktopOnly": false
 }
