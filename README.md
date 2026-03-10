@@ -29,7 +29,6 @@ Write furigana inline using curly braces. Both ASCII and full-width (IME-friendl
 
 ```
 {漢字|かんじ}
-｛漢字｜かんじ｝
 ```
 
 A single reading is placed above the entire base word.
@@ -37,11 +36,10 @@ A single reading is placed above the entire base word.
 ### Per-character annotation
 
 ```
-{漢|かん|字|じ}
-｛漢｜かん｜字｜じ｝
+{漢字|かん|じ}
 ```
 
-Each base character gets its own reading. The number of readings must match the number of base characters.
+The base text comes first, followed by one reading per character. The number of readings must match the number of base characters.
 
 ### Non-Japanese readings
 
