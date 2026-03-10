@@ -28,4 +28,4 @@
  * Delimiters: ASCII { } | or full-width ｛ ｝ ｜ (U+FF5B / FF5D / FF5C)
  */
 export const FURIGANA_REGEXP =
-  /(?:\{|\uFF5B)((?:[\u2E80-\u2FFF\u3000-\u312F\u3190-\u319F\u31F0-\u31FF\u3400-\u4DBF\u4E00-\u9FFF\uA000-\uA4CF\uAC00-\uD7AF\uF900-\uFAFF\uFF00-\uFFEF])+)((?:(?:\\?(?:\||\uFF5C))[^\}\uFF5D]*)+)(?:\}|\uFF5D)/gmu;
+  /(?:\{|\uFF5B)((?:[\u2E80-\u2FFF\u3000-\u312F\u3190-\u319F\u31F0-\u31FF\u3400-\u4DBF\u4E00-\u9FFF\uA000-\uA4CF\uAC00-\uD7AF\uF900-\uFAFF\uFF00-\uFFEF])+)((?:(?:\\?(?:\||\uFF5C))[^}\uFF5D]*)+)(?:\}|\uFF5D)/gmu;

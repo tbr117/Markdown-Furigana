@@ -96,11 +96,11 @@ export class FuriganaSettingsTab extends PluginSettingTab {
     previewChar.appendText("漢字");
 
     // ── Section: Rendering ──────────────────────────────────────────────
-    containerEl.createEl("h3", { text: "Rendering" });
+    new Setting(containerEl).setName("Rendering").setHeading();
 
     new Setting(containerEl)
-      .setName("Show furigana in Source Mode")
-      .setDesc("Render ruby decorations while editing in Source Mode.")
+      .setName("Show furigana in source mode")
+      .setDesc("Render ruby decorations while editing in source mode.")
       .addToggle((t) =>
         t
           .setValue(this.plugin.settings.showInSourceMode)
@@ -125,7 +125,7 @@ export class FuriganaSettingsTab extends PluginSettingTab {
       );
 
     // ── Section: Appearance ─────────────────────────────────────────────
-    containerEl.createEl("h3", { text: "Appearance" });
+    new Setting(containerEl).setName("Appearance").setHeading();
 
     const sizeSetting = new Setting(containerEl)
       .setName("Furigana font size")
@@ -248,7 +248,7 @@ export class FuriganaSettingsTab extends PluginSettingTab {
       );
 
     // ── Section: Auto Reading ────────────────────────────────────────────
-    containerEl.createEl("h3", { text: "Auto Reading" });
+    new Setting(containerEl).setName("Auto reading").setHeading();
 
     new Setting(containerEl)
       .setName("Enable auto kanji → hiragana")
@@ -267,24 +267,24 @@ export class FuriganaSettingsTab extends PluginSettingTab {
 
     // Dict setup note
     const dictNote = containerEl.createDiv({
-      cls: "setting-item-description furigana-howto",
+      cls: "setting-item-description furigana-howto furigana-dict-note",
     });
-    dictNote.style.paddingBottom = "8px";
     const dictP = dictNote.createEl("p");
     dictP.appendText("The ");
     dictP.createEl("code", { text: "dict/" });
     dictP.appendText(" folder (~17 MB) must be present inside ");
-    dictP.createEl("code", { text: ".obsidian/plugins/furigana-pro/" });
+    dictP.createEl("code", { text: `${this.plugin.app.vault.configDir}/plugins/furigana-pro/` });
     dictP.appendText(". To create it, run:");
     dictNote.createEl("pre", {
       text: "npm install && npm run copy-dict",
-    }).style.margin = "4px 0";
+      cls: "furigana-dict-pre",
+    });
     dictNote.createEl("p", {
       text: "then reload the plugin. The first annotation after Obsidian starts will take a few seconds while the dictionary loads.",
     });
 
-    // ── Section: How to Use ──────────────────────────────────────────────
-    containerEl.createEl("h3", { text: "How to Use" });
+    // ── Section: How to use ──────────────────────────────────────────────
+    new Setting(containerEl).setName("How to use").setHeading();
 
     const howto = containerEl.createDiv({ cls: "furigana-howto" });
 

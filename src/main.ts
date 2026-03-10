@@ -13,7 +13,6 @@
  */
 
 import { FileSystemAdapter, MarkdownView, Platform, Plugin } from 'obsidian';
-import * as path from 'path';
 
 import {
   FuriganaProSettings,
@@ -128,6 +127,6 @@ export default class FuriganaProPlugin extends Plugin {
   getDictPath(): string | null {
     if (!Platform.isDesktop) return null;
     const adapter = this.app.vault.adapter as FileSystemAdapter;
-    return path.join(adapter.getBasePath(), this.manifest.dir ?? '', 'dict');
+    return `${adapter.getBasePath()}/${this.manifest.dir ?? ''}/dict`;
   }
 }

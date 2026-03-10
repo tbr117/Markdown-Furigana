@@ -1,7 +1,7 @@
 {
   "id": "furigana-pro",
   "name": "Furigana Pro",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "minAppVersion": "1.4.0",
   "description": "Rich furigana rendering with auto kanji→hiragana, custom styling, and visibility toggle.",
   "author": "TBR117",
