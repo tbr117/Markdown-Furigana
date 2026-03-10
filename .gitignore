@@ -1,4 +1,5 @@
 node_modules/
 dict/
 main.js
+.DS_Store
 *.js.map
