@@ -2,6 +2,8 @@
 
 > An enhanced continuation of [obsidian-markdown-furigana](https://github.com/steven-kraft/obsidian-markdown-furigana) by Steven Kraft, with richer rendering, automatic kanji→hiragana generation, full appearance customisation, and a visibility toggle.
 
+  <p><a href="https://raw.githubusercontent.com/tbr117/Markdown-Furigana/main/img/Img1.png"><center><img src="https://raw.githubusercontent.com/tbr117/Markdown-Furigana/main/img/Img1.png" width="50%"></center></a></p>
+
 Furigana Pro renders `{kanji|reading}` syntax as proper text with the reading above the kanjis in Obsidian's Reading View, Live Preview, and Source Mode.
 
 On the desktop version of Obsidian it can also generate the readings for you automatically using a bundled Japanese morphological analyser.
