@@ -118,3 +118,12 @@ body.furigana-hidden ruby.furi .furi-char rt {
   padding-left: 1.4em;
   margin: 6px 0;
 }
+
+/* ── Dict setup note ────────────────────────────────────────────── */
+.furigana-dict-note {
+  padding-bottom: 8px;
+}
+
+.furigana-dict-pre {
+  margin: 4px 0;
+}

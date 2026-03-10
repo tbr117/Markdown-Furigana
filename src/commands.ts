@@ -65,7 +65,7 @@ function findFuriganaBlockAtCursor(
   line: string,
   ch: number,
 ): FuriganaBlock | null {
-  const BLOCK = /(?:\{|\uFF5B)([\u3040-\u30FF\u3400-\u4DBF\u4E00-\u9FFF\uAC00-\uD7AF\uF900-\uFAFF]+)((?:(?:\||\uFF5C)[^\}\uFF5D]*)*)(?:\}|\uFF5D)/g;
+  const BLOCK = /(?:\{|\uFF5B)([\u3040-\u30FF\u3400-\u4DBF\u4E00-\u9FFF\uAC00-\uD7AF\uF900-\uFAFF]+)((?:(?:\||\uFF5C)[^}\uFF5D]*)*)(?:\}|\uFF5D)/g;
   let m: RegExpExecArray | null;
   while ((m = BLOCK.exec(line)) !== null) {
     const from = m.index;

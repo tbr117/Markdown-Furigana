@@ -32,7 +32,6 @@ interface KuromojiModule {
 }
 
 // kuromoji is a CJS module; cast via unknown to satisfy our local type declarations
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 import kuromojiLib from 'kuromoji';
 const kuromoji = kuromojiLib as unknown as KuromojiModule;
 
@@ -169,7 +168,7 @@ export function getReadingString(text: string): string {
  */
 export function removeFuriganaFromText(text: string): string {
   return text.replace(
-    /(?:\{|\uFF5B)((?:[\u2E80-\u2FFF\u3000-\u312F\u3190-\u319F\u31F0-\u31FF\u3400-\u4DBF\u4E00-\u9FFF\uA000-\uA4CF\uAC00-\uD7AF\uF900-\uFAFF\uFF00-\uFFEF])+)(?:(?:\\?(?:\||\uFF5C))[^\}\uFF5D]*)+(?:\}|\uFF5D)/gmu,
+    /(?:\{|\uFF5B)((?:[\u2E80-\u2FFF\u3000-\u312F\u3190-\u319F\u31F0-\u31FF\u3400-\u4DBF\u4E00-\u9FFF\uA000-\uA4CF\uAC00-\uD7AF\uF900-\uFAFF\uFF00-\uFFEF])+)(?:(?:\\?(?:\||\uFF5C))[^}\uFF5D]*)+(?:\}|\uFF5D)/gmu,
     '$1',
   );
 }
