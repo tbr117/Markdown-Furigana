@@ -110,6 +110,8 @@ All appearance settings write CSS custom properties to the document and take eff
 
 When **Enable auto kanji → hiragana** is on, the _Annotate Japanese at cursor_ command uses [kuromoji](https://github.com/takuyaa/kuromoji) — a Japanese morphological analyser — to tokenise text and look up the hiragana reading for each kanji token.
 
+<center><img src="https://raw.githubusercontent.com/tbr117/Markdown-Furigana/main/img/furigana.gif" width="150%"></center>
+  
 **How it works:**
 
 1. The selected text (or word at the cursor) is tokenised into morphemes.
